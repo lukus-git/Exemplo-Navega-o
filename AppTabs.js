@@ -1,5 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native'
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createTabNavigator } from "@react-navigation/Tab";
 import { MaterialIcons } from '@expo/vector-icons'
 
 import HomeScreen from "./screens/HomeScreen";
@@ -7,48 +7,48 @@ import DetailsScreen from './screens/DetailsScreen';
 import AboutScreen from './screens/AboutScreen';
 import ProductScreen from './screens/ProductScreen';
 
-const Drawer = createDrawerNavigator()
+const Tab = createTabNavigator()
 
 export default function App(){
   return(
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName='Home'>
-        <Drawer.Screen name='Home'
+      <Tab.Navigator initialRouteName='Home'>
+        <Tab.Screen name='Home'
           component={HomeScreen} 
           options={{
             title: 'Início',
-            drawerIcon: ({color, size}) => (
+            TabBarIcon: ({color, size}) => (
               <MaterialIcons name='assistant-photo' color={color} size={size} />
             )
           }}
           />
 
-        <Drawer.Screen name='Details' component={DetailsScreen}
+        <Tab.Screen name='Details' component={DetailsScreen}
           options={{
             title: 'Detalhes',
-            drawerIcon: ({color, size}) => (
+            TabBarIcon: ({color, size}) => (
               <MaterialIcons name='airplanemode-active' color={color} size={size} />
             )
           }}
         />
         
-        <Drawer.Screen name='About' component={AboutScreen}
+        <Tab.Screen name='About' component={AboutScreen}
           options={{
             title: 'Sobre',
-            drawerIcon: ({color, size}) => (
+            TabBarIcon: ({color, size}) => (
               <MaterialIcons name='alarm' color={color} size={size} />
             )
           }}
         />
-        <Drawer.Screen name='Product' component={ProductScreen}
+        <Tab.Screen name='Product' component={ProductScreen}
           options={{
             title: 'Produto',
-            drawerIcon: ({color, size}) => (
+            TabBarIcon: ({color, size}) => (
               <MaterialIcons name='add-business' color={color} size={size} />
             )
           }}
         />
-      </Drawer.Navigator>
+      </Tab.Navigator>
     </NavigationContainer>
   )
 }

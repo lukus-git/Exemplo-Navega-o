@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Button } from 'react-native'
 export default function AboutScreen({navigation}) {
     return (
         <View style={estilos.container}>
-            <Text>Tela Sobre</Text>
+            <Text>Morando do amor com pistache</Text>
             <View style={estilos.botao}>
                 <Button
                     title='Ir para Home'
